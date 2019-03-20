@@ -22,4 +22,10 @@ class UserTest < Minitest::Test
   def test_jokes_returns_empty_array
     assert_equal [], @sal.jokes
   end
+
+  def test_learn_jokes_adds_jokes_to_array
+    @sal.learn(@joke_1)
+    @sal.learn(@joke_2)
+    assert_equal [@joke_1, @joke_2], @sal.jokes
+  end
 end
